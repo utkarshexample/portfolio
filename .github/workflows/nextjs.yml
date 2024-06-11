@@ -37,8 +37,12 @@ jobs:
         run: |
           find node_modules -type l | while read -r link; do
             target=$(readlink "$link")
-            rm "$link"
-            cp -R "$target" "$link"
+            if [ -e "$target" ]; then
+              rm "$link"
+              cp -R "$target" "$link"
+            else
+              echo "Warning: Target $target does not exist for symlink $link"
+            fi
           done
 
       - name: Verify no symlinks remain
