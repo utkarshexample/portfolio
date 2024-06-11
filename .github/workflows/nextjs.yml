@@ -53,6 +53,8 @@ jobs:
         with:
           name: github-pages
           path: ./out
+        env:
+            ACTIONS_STEP_DEBUG: true  # Enables step debug logging
 
   deploy:
     environment:
@@ -64,3 +66,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        env:
+          ACTIONS_STEP_DEBUG: true  # Enables step debug logging
+      
