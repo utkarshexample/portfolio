@@ -20,6 +20,7 @@ const SITE = {
     headline: "I like solving hard problems with software.",
     subline:
       "Senior engineer, currently at Toyota. Real-time systems, honest metrics, things I build for fun.",
+    cta: { label: "Say hi on GitHub", href: "https://github.com/utkarshexample" },
   },
 
   metrics: [
